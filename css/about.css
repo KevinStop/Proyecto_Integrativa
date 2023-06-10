@@ -1,0 +1,26 @@
+.container {
+    text-align: center;
+    width: 900px;
+    background-color: white;
+    margin: 30px auto 0;
+    border-radius: 30px;
+}
+
+.contact {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    background-color: #aaa;
+    border-radius: 30px;
+}
+
+h1 {
+    padding-top: 20px;
+    letter-spacing: 3px;
+    font-size: 40px;
+}
+
+.contact p {
+    word-spacing: 2px;
+    letter-spacing: .9px;
+    font-size: 18px;
+}

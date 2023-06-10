@@ -1,0 +1,334 @@
+/*Cabecera*/
+body {
+    width: 100%;
+    background-image: url("../imagenes/background.jpg");
+    background-size: cover;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a , a:hover, a:active {
+    color: black;
+    text-decoration: none;
+  }
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
+
+/*Damos un estilo para luego llamarlo*/
+:root {
+    --main-color: #F22121;
+    --color-botones: #130F0F;
+    --white: #e9dede;
+    --black: #1c1b1b;
+    --border: .1rem solid rgba(17, 87, 9, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+/* Mandamos estilo a todo el html*/
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: .8rem;
+}
+
+/*Fondo*/
+body {
+    background: var(--while);
+}
+
+section {
+    padding: 2rem 7%;
+}
+
+
+
+/*Parte de la cabecera foto de portada*/
+.home {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: url(../imagenes/burger.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.home .content p {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    margin-left: 10px;
+    color: whitesmoke;
+}
+
+/*Texto alado de la portada*/
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: black;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/*Estilo para los titulos */
+.heading {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.heading span { 
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+/*Reseña de los clientes*/
+.review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.review .box-container .box {
+    border: var(--border);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+/*Texto de las reseñas*/
+.review .box-container .box p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: black;
+    padding: 2rem 0;
+}
+
+/*Tamaño de imagen de las reseñas*/
+.review .box-container .box .user {
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*Para los nombres de las reseñas*/
+.review .box-container .box h3 {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: black;
+}
+
+/* Cierre*/
+
+.footer {
+    background: var(--while);
+    text-align: center;
+}
+
+.footer .links {
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.footer .credit {
+    font-size: 2rem;
+    color: black;
+    font-weight: lighter;
+    padding: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/*Lista deñl footer separa los cuadros*/
+.footer .links a {
+    padding: .7rem 2rem;
+    color: black;
+    border: var(--border);
+    font-size: 2rem;
+
+}
+
+.footer .links a:hover {
+    background: var(--main-color);
+}
+
+/*Doble color */
+.footer .credit span {
+    color: var(--main-color);
+    font-family: cursive;
+}
+
+/* media queries  */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+
+    .home .content h3 {
+        font-size: 4.5rem;
+    }
+
+    .home .content p {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+}
+#botoncargar{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 1.7rem;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#botoncargar:hover{
+    color: #F22121;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #130F0F;
+}
+
+.box{
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #130F0F;
+}
+
+
+.parrafo{
+    text-align: center;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 30px;
+    color: whitesmoke;
+}
+
+.slogan{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30px;
+    color: whitesmoke;
+}
+
+.nave{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-bottom: 2px solid black;
+    border-bottom-style: dotted;
+    color: #e9dede;
+}
+
+
+.imagen2{
+
+    height: 500px;
+    width: 500px;
+    
+}
+
+.texto3{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.parrafo4{
+    font-family: monospace;
+}
+
+.texto-2{
+    background-color:black;
+}
+
+.nave:hover {
+    color: red;
+    transition: 0.2s;
+  }

@@ -1,0 +1,36 @@
+body {
+  background-color: white;
+  width: 100vw;
+  font-family: 'Work Sans', sans-serif;
+}
+body .contenedor-card{
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  min-height: 220px;
+  /* max-height: 100px; */
+  background-position: center;
+}
+
+.home .content {
+  text-align: center;
+}
+
+.home .content h3{
+  font-size: 8em;
+}
+
+a,a:hover{
+  font-weight: bold;
+  color: white;
+}

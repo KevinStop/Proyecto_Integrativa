@@ -1,0 +1,193 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo</title>
+  <link rel="stylesheet" href="css/Home.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="css/acerca_de.css">
+  <script src="js/grupo2-boton.js"></script>
+  <script src="js/grupo2-info.js"></script>
+
+</head>
+
+<body>
+  <nav class="texto-2">
+    <a href="home.html">
+      <div class="nave">Home Page</div>
+    </a>
+    <a href="#">
+      <div class="nave">Catálogo</div>
+    </a>
+    <a href="acercaDe.html">
+      <div class="nave">Nuestro restaurante</div>
+    </a>
+  </nav>
+
+  <header class="header">
+
+  </header>
+
+  <section class="home" id="home">
+
+    <div class="content">
+      <h3><strong class="tituloCatalogo">Catalogo</strong></h3>
+    </div>
+
+  </section>
+
+  <template id="shadowTemplate" data-name="jhon-card" data-type="shadowDOM">
+    <style>
+      :host {
+        position: relative;
+        display: inline-block;
+        width: 230px;
+        height: 383px;
+        box-sizing: border-box;
+        margin: 100px 20px;
+
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, .5);
+
+        overflow: hidden;
+      }
+
+      ::slotted([slot="image"]) {
+        position: absolute;
+        top: -20%;
+        left: -30%;
+        max-width: 160%;
+        height: auto;
+
+        transition: all .25s ease-in-out;
+      }
+
+      :host(:hover) ::slotted([slot="image"]) {
+        transform: scale(.90);
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, .6);
+        color: #fff;
+
+        transition: bottom .25s ease-in;
+
+        overflow: hidden;
+      }
+
+      :host(:hover) .overlay {
+        bottom: 0;
+      }
+
+      .overlay__title {
+        padding: 30px 0;
+
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .overlay__description {
+        padding: 0 10px 30px 10px;
+        min-height: 9em;
+
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.4em;
+      }
+
+      .overlay__button {
+        color: white;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        bottom: 0;
+        transition: background .25s ease-out;
+
+        cursor: pointer;
+      }
+
+      ::slotted([slot="button"]),
+      ::slotted([slot="button"]:link),
+      ::slotted([slot="button"]:visited),
+      ::slotted([slot="button"]:hover) {
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+
+    <div class="img">
+      <slot name="image"></slot>
+    </div>
+
+    <div class="overlay">
+      <div class="overlay__title">
+        <slot name="header"></slot>
+      </div>
+
+      <div class="overlay__description">
+        <slot name="description"></slot>
+      </div>
+      <div class="overlay__button">
+        <slot></slot>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    var allShadows = [...document.querySelectorAll('template[data-type="shadowDOM"]')];
+    allShadows.forEach((item) => {
+      customElements.define(item.dataset.name, class extends HTMLElement {
+        connectedCallback() {
+          this.attachShadow({ mode: 'open' });
+          this.shadowRoot.append(item.content.cloneNode(true));
+        }
+      });
+    });
+  </script>
+  <div class="contenedor-card">
+    <jhon-card>
+      <img slot="image" src="images/bam.jpg" width="470" height="470" alt="" />
+      <span slot="header">BBQ Burger
+      </span>
+      <span slot="description">150gr de carne de res a la parrilla acompañada de cebolla caramelizada, queso cheddar,
+        tomate, pepino y lechuga y con sus salsas bbq. acompañadas con papas fritas</span>
+      
+    </jhon-card>
+
+    <jhon-card>
+      <img slot="image" src="images/hot.jpg" width="400" height="600" alt="" />
+      <span slot="header">Hot Dog</span>
+      <span slot="description">¼ de jamón, ¼ de salami, ¼ de salchicha Frankfurt, ¼ de tocineta y orégano</span>
+      
+    </jhon-card>
+
+    <jhon-card>
+      <img slot="image" src="images/ci.jpg" width="400" height="600" alt="" />
+      <span slot="header">Chicken Burger</span>
+      <span slot="description">1 pechuga a la parrilla acompañada de tocino, queso cheddar, tomate, y lechuga.
+        acompañadas con papas fritas</span>
+      
+    </jhon-card>
+
+
+  </div>
+  <a href="index.html">
+    <div class="boton"><span>Home Page</span></div>
+  </a>
+  <footer>
+    <span>Grupo 5 - Desarrollo Web</span>
+  </footer>
+</body>
+
+</html>

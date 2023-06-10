@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sistema Botanico</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+   
+
+    <link rel="stylesheet" href="css/Home.css">
+    <link rel="stylesheet" href="css/formulario_contacto.css">
+
+    <script src="js/modulos.js"  type="module"></script>
+    <script src="js/template.js"></script>
+
+</head>
+
+<body>
+    <nav class="texto-2">
+        <a href="#">
+            <div class="nave">Home Page</div>
+        </a>
+        <a href="catalogo.html">
+            <div class="nave">Catálogo</div>
+        </a>
+        <a href="acercaDe.html">
+            <div class="nave">Nuestro restaurante</div>
+        </a>
+    </nav>
+    <header class="header">
+
+    </header>
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3 class="parrafo">Los antojitos de media noche</h3>
+            <p class="slogan">Se vende comida rápida, !Conoce nuestras tiendas!</p>
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        
+
+        <div class="row">
+
+            <div class="image">
+                <img class="imagen2" src="imagenes/burger.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <h3 class="texto3">¿Por que Preferirnos?</h3>
+                <p class="parrafo4">Somos un restaurante que se preocupa por la calidad de sus productos y los clientes
+            Todos nuestros productos son sembrados con el mejor cuidado y calidad, los abonos son 100% naturales.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <template id='Estrella'>
+        <section class="products" id="products">
+
+            <h1 class="heading"> Productos <span>más vendidos</span> </h1>
+
+            <div class="box-container">
+
+                <div class="box">
+                    <div class="image">
+                        <img src="imagenes/ham.PNG " style="
+                    width: 220px;">
+                    </div>
+                    <div class="content">
+                        <h3>HAMBURGUESA </h3>
+
+                        <div class="price">$5.99 <span>$8.99</span></div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="imagenes/han2.PNG" style="
+                    width: 250px; margin-top:20px; ">
+                    </div>
+                    <div class="content">
+                        <h3>SANDUCHES</h3>
+                        <div class="price">$3.99 <span>$5.99</span></div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="icons">
+                        <a href="#" class="fas fa-shopping-cart"></a>
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">
+                        <img src="imagenes/pizza.jpg" style="
+                    width: 220px; margin-top:20px;">
+                    </div>
+                    <div class="content">
+                        <h3>PIZZA</h3>
+                        <div class="price">$8.99 <span>$10.99</span></div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <style>
+            /*Estilo para productos estrellas*/
+            .products .box-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+                gap: 1.5rem;
+            }
+
+            .products .box-container .box {
+                text-align: center;
+                border: var(--border);
+                padding: 2rem;
+                border-style: solid;
+                border-radius: 30px;
+            }
+
+            .products .box-container .box .content h3 {
+                color: rgb(0, 0, 0);
+                font-size: 2.5rem;
+            }
+
+            /*Color para el precio*/
+            .products .box-container .box .content .price {
+                color: rgb(0, 0, 0);
+                font-size: 2.5rem;
+            }
+
+            /*Rayamos el precio */
+            .products .box-container .box .content .price span {
+                text-decoration: line-through;
+                font-weight: lighter;
+                font-size: 1.5rem;
+            }
+
+            .heading {
+                text-align: center;
+                color: rgb(0, 0, 0);
+                text-transform: uppercase;
+                padding-bottom: 3.5rem;
+                font-size: 4rem;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .heading span {
+                color: var(--main-color);
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+            }
+
+            .btn {
+                margin-top: 1rem;
+                display: inline-block;
+                padding: .9rem 3rem;
+                font-size: 1.7rem;
+                color: rgb(255, 255, 255);
+                background: var(--color-botones);
+                cursor: pointer;
+                text-decoration: none;
+                border-radius: 10px;
+            }
+
+            .btn:hover {
+                letter-spacing: .2rem;
+            }
+        </style>
+    </template>
+    <producto-estrella>
+    </producto-estrella>
+
+    <!--Parte de productos estrella-->
+    <section class="review" id="review">
+
+        <h1 class="heading"> Nuestros <span>Clientes</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="imagenes/quote-img.png" alt="" class="quote">
+                <p>Excelente servicio, llevo haciendo más de 10 pedidos y todos ellos me llegan con la misma calidad,
+                   mis productos calientitos y estoy muy agradecido con ustedes, recomendados al 100.
+                </p>
+                <img src="imagenes/pic-1.png" class="user" alt="">
+                <h3>Luis Miguel Bravo</h3>
+            </div>
+
+            <div class="box">
+                <img src="imagenes/quote-img.png" alt="" class="quote">
+                <p>Los envíos son muy seguros, llegan impecables tal y como muestran en sus fotos, los productos son de
+                    alta calidad además de enviar aderesos extras a nuestros grupos </p>
+                <img src="imagenes/pic-2.png" class="user" alt="">
+                <h3>Elizabeth Macas</h3>
+            </div>
+
+            <div class="box">
+                <img src="imagenes/quote-img.png" alt="" class="quote">
+                <p>Cada producto que he consumido es exquisito, mantiene la frescura y el aroma a calidad. Para todos
+                    aquellos que desean consumir se las recomiendo
+                        </p>
+                <img src="imagenes/pic-3.png" class="user" alt="">
+                <h3>Kleber Pazmiño</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <br>
+    <br>
+
+    <div class="modal modal-lg " id="modal-registro">
+        <a href="#close" class="modal-overlay" aria-label="Close"></a>
+        <div class="modal-container">
+            <div class="modal-header">
+                <a href="#" class="btn btn-clear float-right" aria-label="Close" id="cerrar"></a>
+                <h2>Comunícate con nosotros</h2>
+                <p>Fast Food ESPE 2022</p>
+                <a href="#"><i class="fa fa-phone"></i> 093 976 5584</a>
+            <a href="#"><i class="fa fa-envelope"></i> jkzambrano@espe.edu.ec</a>
+            <a href="#"><i class="fa fa-map-marked"></i> Santo Domingo, Ecuador</a>
+            </div>
+            <div class="modal-body">
+                <form id="Datos1">
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-input" id="nombre1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-input" id="email1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mensaje</label>
+                        <textarea name="mensaje" placeholder="Déjenos un mensaje" id="mensaje1"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn1" id="enviar1">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!--FIN-->
+    <center>
+        <div>
+            <template id="plantillaestudiante">
+                <br>
+                <p>
+                <h1 class="heading">Nombre: <span></span></h1>
+                </p>
+                <hr>
+            </template>
+        </div>
+        <input id="botoncargar" type="button" value="Nuestros Integrantes" onclick="cargarRegistro()"></h1>
+    </center>
+    <section class="footer">
+
+        <div class="credit">Realizado Por<span> Grupo 2</span> | Todos los derechos reservados </div>
+
+    </section>
+
+</body>
+
+</html>
