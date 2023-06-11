@@ -47,7 +47,7 @@
   
   .navbar-link:hover {
     transform: scale(1.2);
-    background-color: rgb(98, 237, 98);
+    background-color: rgb(127, 131, 127);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     z-index: 1;
   }

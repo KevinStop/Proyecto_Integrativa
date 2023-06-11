@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     container.className = "container bg-dark";
   
     var logo = document.createElement("img");
-    logo.src = "https://www.servientrega.com.ec/images/logo.png";
+    logo.src = "../static/img/Logo.png";
     logo.alt = "";
   
     container.appendChild(logo);
@@ -21,10 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.className = "navbar-nav";
   
     var items = [
-      { href: "/", text: "Home" },
-      { href: "/clientes", text: "Clientes" },
-      { href: "/repartidores", text: "Repartidores" },
-      { href: "/pagos", text: "Pagos" },
+      { href: "../layouts/home.html", text: "Home" },
+      { href: "../layouts/catalogo.html", text: "Clientes" },
     ];
   
     items.forEach(function (item) {
