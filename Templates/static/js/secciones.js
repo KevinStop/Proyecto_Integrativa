@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     var items = [
       { href: "../layouts/home.html", text: "Home" },
-      { href: "../layouts/catalogo.html", text: "Clientes" },
+      { href: "../layouts/Registre.html", text: "Registro" },
     ];
   
     items.forEach(function (item) {
