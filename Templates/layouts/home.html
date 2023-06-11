@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/css/Lpage.css">
     <link rel="stylesheet" href="../static/css/navbar.css">
     <script src="../static/js/secciones.js"></script>
+    <script src="../static/js/boton.js"></script>
     <title>Home</title>
 </head>
 
@@ -31,7 +32,15 @@
                         educación avanzada y aprendizaje global.</p>
                     <p class="p-1">Este campamento está diseñado para estudiantes de secundaria que están considerando
                         una carrera en educación. ¡Ven a explorar tus intereses con nosotros!</p>
-                    <button class="btn btn-outline-dark">Leer más</button>
+                    <custom-button button-color="#212529" text-color="white" button-size="medium" button-text="Leer mas"></custom-button>
+                      <script>
+                        const customButton = document.querySelector('custom-button');
+                    
+                        customButton.addEventListener('custom-click', () => {
+                          console.log('El botón personalizado fue presionado.');
+                        });
+                      </script>
+                      
                 </div>
             </div>
         </div>
