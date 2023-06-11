@@ -47,7 +47,7 @@ input[type="email"] {
     margin-bottom: 15px;
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: #333;
     color: #fff;
     border: none;

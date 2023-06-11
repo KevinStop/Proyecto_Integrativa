@@ -92,4 +92,3 @@ document.addEventListener("DOMContentLoaded", function () {
   
     body.appendChild(footer);
   });
-  
