@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../static/css/Lpage.css">
     <link rel="stylesheet" href="../static/css/navbar.css">
     <script src="../static/js/secciones.js"></script>
     <title>Home</title>
@@ -18,17 +19,172 @@
         <div class="container m-3">
             <div class="row m-3">
                 <div class="col-md-6 col-sm-6 d-flex align-items-center justify-content-center p-3">
-                    <img src="https://i.pinimg.com/564x/ac/e9/57/ace9572e87303799a938fbc5ca369f09.jpg" class="rounded-circle" width="80%" alt="">
+                    <img src="https://i.pinimg.com/564x/ac/e9/57/ace9572e87303799a938fbc5ca369f09.jpg"
+                        class="rounded-circle" width="80%" alt="">
                 </div>
-                <div class="col-md-6 col-sm-6 col-sm-6 d-flex flex-column justify-content-center align-items-center text-center">
+                <div
+                    class="col-md-6 col-sm-6 col-sm-6 d-flex flex-column justify-content-center align-items-center text-center">
                     <h2 class="p-3 font-family-monospace text-secondary">ACERCA DE NUESTRA BIBLIOTECA</h2>
                     <h1 class="p-3">Biblioteca en Línea</h1>
-                    <p class="p-1">Únase a nosotros en la Facultad de Educación en el campus de Illinois para un campamento de 5 días y 4 noches para explorar métodos de enseñanza innovadores, tecnología de educación avanzada y aprendizaje global.</p>
-                    <p class="p-1">Este campamento está diseñado para estudiantes de secundaria que están considerando una carrera en educación. ¡Ven a explorar tus intereses con nosotros!</p>
+                    <p class="p-1">Únase a nosotros en la Facultad de Educación en el campus de Illinois para un
+                        campamento de 5 días y 4 noches para explorar métodos de enseñanza innovadores, tecnología de
+                        educación avanzada y aprendizaje global.</p>
+                    <p class="p-1">Este campamento está diseñado para estudiantes de secundaria que están considerando
+                        una carrera en educación. ¡Ven a explorar tus intereses con nosotros!</p>
                     <button class="btn btn-outline-dark">Leer más</button>
                 </div>
             </div>
         </div>
+
+        <h1 class="Titulo">¡Regístrate para obtener un descuento en los siguientes libreos!</h1>
+
+        <section>
+            <template id="shadowTemplate" data-name="jhon-card" data-type="shadowDOM">
+                <style>
+                    :host {
+                        position: relative;
+                        display: inline-block;
+                        width: 230px;
+                        height: 383px;
+                        box-sizing: border-box;
+                        margin: 100px 20px;
+
+                        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, .5);
+
+                        overflow: hidden;
+                    }
+
+                    ::slotted([slot="image"]) {
+                        position: absolute;
+                        top: -20%;
+                        left: -30%;
+                        max-width: 160%;
+                        height: auto;
+
+                        transition: all .25s ease-in-out;
+                    }
+
+                    :host(:hover) ::slotted([slot="image"]) {
+                        transform: scale(.90);
+                    }
+
+                    .overlay {
+                        position: absolute;
+                        bottom: -100%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        background: rgba(0, 0, 0, .6);
+                        color: #fff;
+
+                        transition: bottom .25s ease-in;
+
+                        overflow: hidden;
+                    }
+
+                    :host(:hover) .overlay {
+                        bottom: 0;
+                    }
+
+                    .overlay__title {
+                        padding: 30px 0;
+
+                        text-align: center;
+                        font-size: 30px;
+                    }
+
+                    .overlay__description {
+                        padding: 0 10px 30px 10px;
+                        min-height: 9em;
+
+                        font-size: 18px;
+                        text-align: center;
+                        line-height: 1.4em;
+                    }
+
+                    .overlay__button {
+                        color: white;
+                        overflow: hidden;
+                        display: block;
+                        margin: 0 auto;
+                        text-align: center;
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        font-weight: bold;
+                        bottom: 0;
+                        transition: background .25s ease-out;
+
+                        cursor: pointer;
+                    }
+
+                    ::slotted([slot="button"]),
+                    ::slotted([slot="button"]:link),
+                    ::slotted([slot="button"]:visited),
+                    ::slotted([slot="button"]:hover) {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                </style>
+                <div class="img">
+                    <slot name="image"></slot>
+                </div>
+
+                <div class="overlay">
+                    <div class="overlay__title">
+                        <slot name="header"></slot>
+                    </div>
+
+                    <div class="overlay__description">
+                        <slot name="description"></slot>
+                    </div>
+                    <div class="overlay__button">
+                        <slot></slot>
+                    </div>
+                </div>
+            </template>
+            <script>
+                var allShadows = [...document.querySelectorAll('template[data-type="shadowDOM"]')];
+                allShadows.forEach((item) => {
+                    customElements.define(item.dataset.name, class extends HTMLElement {
+                        connectedCallback() {
+                            this.attachShadow({ mode: 'open' });
+                            this.shadowRoot.append(item.content.cloneNode(true));
+                        }
+                    });
+                });
+            </script>
+
+            <div style="display: flex; justify-content: center;">
+                <div class="contenedor-card">
+                    <jhon-card>
+                        <img slot="image" src="https://cdn.culturagenial.com/es/imagenes/el-principito-portada-cke.jpg" style="margin-top: 80px; margin-left: 65px;" width="248" alt="" />
+                        <span slot="header">El Principito
+                        </span>
+                        <span slot="description">150gr de carne de res a la parrilla acompañada de cebolla caramelizada,
+                            queso
+                            cheddar,
+                            tomate, pepino y lechuga y con sus salsas bbq. acompañadas con papas fritas</span>
+                    </jhon-card>
+
+                    <jhon-card>
+                        <img slot="image" src="https://i.pinimg.com/originals/c0/7f/03/c07f0335aab7d6b4d32d90ab7ba9e7d5.jpg" style="margin-top: 85px; margin-left: 65px;" width="248" alt="" />
+                        <span slot="header">Hot Dog</span>
+                        <span slot="description">¼ de jamón, ¼ de salami, ¼ de salchicha Frankfurt, ¼ de tocineta y
+                            orégano</span>
+                    </jhon-card>
+
+                    <jhon-card>
+                        <img slot="image" src="https://cdn.culturagenial.com/es/imagenes/la-sombra-del-viento-portada-cke.jpg" style="margin-top: 85px; margin-left: 65px;" width="248" alt="" />
+                        <span slot="header">Chicken Burger</span>
+                        <span slot="description">1 pechuga a la parrilla acompañada de tocino, queso cheddar, tomate, y
+                            lechuga.
+                            acompañadas con papas fritas</span>
+                    </jhon-card>
+                </div>
+            </div>
+        </section>
+
     </div>
 </body>
 
